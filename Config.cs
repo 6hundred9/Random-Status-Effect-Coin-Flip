@@ -1,21 +1,16 @@
 ﻿using Exiled.API.Interfaces;
-using Exiled.Events.Commands.Reload;
-using System.Collections.Generic;
+using RandomCoinEffect.Items;
 using System.ComponentModel;
-using RandomEffectCoinFlip.Items;
-using YamlDotNet.Serialization;
 
-namespace RandomEffectCoinFlip
+namespace RandomCoinEffect
 {
     public class Config : IConfig
     {
-        [Description("Config for coin effects")]
-        public List<StatusEffectCoinItem> RandomCoinEffect { get; set; } = new() { 
-            new StatusEffectCoinItem(),
-        };
 
+        [Description("Config for coin effects")]
+        public CoinItem RandomCoinEffect { get; set; } = new();
 
         public bool IsEnabled { get; set; } = true;
-        public bool Debug { get; set; } = true;
+        public bool Debug { get; set; } = false;
     }
 }
